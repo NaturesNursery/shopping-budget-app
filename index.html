@@ -12,28 +12,32 @@
   <div class="budget-box">
     <label>Budget ($):</label>
     <input type="number" id="budgetInput" placeholder="150" />
-    <button onclick="setBudget()">Set Budget</button>
+    <button id="setBudgetBtn">Set Budget</button>
+
     <p>Remaining: $<span id="remaining">0.00</span></p>
   </div>
 
-  <div class="item-box">
-    <input type="text" id="itemName" placeholder="Item name" />
-    <input type="number" id="itemPrice" placeholder="Price" />
-    <button onclick="addItem()">Add Item</button>
-  </div>
+<div class="add-item">
+  <input type="text" id="itemName" placeholder="Item name" />
+  <input type="number" id="itemQty" placeholder="Qty" min="1" value="1" />
+  <input type="number" id="itemPrice" placeholder="Price" step="0.01" min="0" />
+  <button id="addItemBtn">Add Item</button>
+</div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Price ($)</th>
-      </tr>
-    </thead>
-    <tbody id="itemList"></tbody>
-  </table>
-
-  <button class="export" onclick="exportCSV()">Export to Excel</button>
-
+<table id="itemsTable">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Qty</th>
+      <th>Price ($)</th>
+      <th>Total ($)</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+  </table> 
+<button id="exportBtn" class="export">Export to Excel</button>
   <script src="script.js"></script>
 </body>
 </html>
+
