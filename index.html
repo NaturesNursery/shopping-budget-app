@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shopping Budget Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Shopping Budget Planner</h1>
+
+  <div class="budget-box">
+    <label>Budget ($):</label>
+    <input type="number" id="budgetInput" placeholder="150" />
+    <button onclick="setBudget()">Set Budget</button>
+    <p>Remaining: $<span id="remaining">0.00</span></p>
+  </div>
+
+  <div class="item-box">
+    <input type="text" id="itemName" placeholder="Item name" />
+    <input type="number" id="itemPrice" placeholder="Price" />
+    <button onclick="addItem()">Add Item</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price ($)</th>
+      </tr>
+    </thead>
+    <tbody id="itemList"></tbody>
+  </table>
+
+  <button class="export" onclick="exportCSV()">Export to Excel</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
